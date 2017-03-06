@@ -9,7 +9,7 @@ module.exports = function (app) {
   app.use('/posts', require('./posts'));
   // 404页面
   app.use(function (req, res) {
-    if (!res.headerSent) {
+    if (!res.headersSent) {
       res.status(404).render('404');
     }
   });
